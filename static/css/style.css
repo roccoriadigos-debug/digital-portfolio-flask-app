@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    margin: 0;
+}
+
+/* Banner layout */
+.banner {
+    display: flex;
+    align-items: center;      /* vertically center text next to image */
+    gap: 20px;
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
+
+/* Image stays on the left */
+.banner-logo {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;           /* prevent image from shrinking */
+}
+
+/* Text block */
+.banner-text {
+    text-align: left;        /* text aligned, not centered */
+}
+
+.banner-text h1 {
+    margin: 0;
+}
+
+.banner-links {
+    margin-top: 6px;
+}
+
+.banner-links a {
+    color: #e5e7eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.banner-links a:hover {
+    text-decoration: underline;
+}
