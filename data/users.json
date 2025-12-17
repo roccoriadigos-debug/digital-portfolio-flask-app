@@ -1,0 +1,11 @@
+{
+  "Rocco": {
+    "name": "Rocco",
+    "bio": "Full-stack developer and project lead.",
+    "projects": [
+      "Flask Web App",
+      "Team Management Tool"
+    ],
+    "education": "B.S. in Computer Science"
+  }
+}

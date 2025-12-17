@@ -9,22 +9,24 @@
 </head>
 <body>
 
+
+    
     <!-- Banner / Header -->
-    <header class="banner">
+<header class="banner">
+    <div class="banner-text">
         <h1>My Digital Portfolio</h1>
+
         <p class="banner-links">
-    <a href="/Web_Development">Web Development</a>
-    •
-    <a href="/Projects">Projects</a>
-    •
-    <a href="/Experience">Experience</a>
+    <a href="{{ url_for('overview', username=username) }}">Overview</a> •
+    <a href="{{ url_for('projects', username=username) }}">Projects</a> •
+    <a href="{{ url_for('education', username=username) }}">Education</a> •
+    <a href="{{ url_for('contact', username=username) }}">Contact</a>
 </p>
-    </header>
+
+    </div>
+</header>
+
+
+
 
     <!-- Main page content -->
-    <main>
-        <h2>Welcome to the Projects page</h2>
-    </main>
-
-</body>
-</html>

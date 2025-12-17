@@ -1,38 +1,29 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #000;
+    background-color: #ffffff;
     margin: 0;
 }
 
 /* Banner layout */
 .banner {
-    display: flex;
-    align-items: center;      /* vertically center text next to image */
-    gap: 20px;
-    padding: 20px;
-    background-color: black;
+    align-items: center;      /* vertically center text */
+    gap: 10px;
+    padding: 10px;
+    background-color: rgb(49, 5, 49);
     color: white;
 }
 
-/* Image stays on the left */
-.banner-logo {
-    width: 140px;
-    height: auto;
-    object-fit: contain;
-    flex-shrink: 0;           /* prevent image from shrinking */
-}
-
-/* Text block */
 .banner-text {
-    text-align: left;        /* text aligned, not centered */
+    text-align: center;        /* text centered */
 }
 
 .banner-text h1 {
+    font-size: 750;
     margin: 0;
 }
 
 .banner-links {
-    margin-top: 6px;
+    margin-top: 10px;
 }
 
 .banner-links a {
@@ -44,3 +35,30 @@ body {
 .banner-links a:hover {
     text-decoration: underline;
 }
+
+
+/* Users */
+
+.users {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.users h2 {
+    padding-left: 50px;
+    padding-bottom: 0;
+    font-size: xx-large;
+}
+
+.users p {
+    padding-top: 0;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items: left;
+    color: #000000;
+    font-size: xx-large;
+}
+
+.users p1 {
+    font-size: x-large;
+}
+

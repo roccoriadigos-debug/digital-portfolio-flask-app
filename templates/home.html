@@ -15,16 +15,14 @@
 <header class="banner">
     <div class="banner-text">
         <h1>My Digital Portfolio</h1>
-        <p class="banner-links">
 
-            <a href="/Overview">Overview</a>
-            •
-            <a href="/Projects">My Projects</a>
-            •
-            <a href="/Education">Education</a>
-            •
-            <a href="/Contact">Contact</a>
-        </p>
+        <p class="banner-links">
+    <a href="{{ url_for('overview', username=username) }}">Overview</a> •
+    <a href="{{ url_for('projects', username=username) }}">Projects</a> •
+    <a href="{{ url_for('education', username=username) }}">Education</a> •
+    <a href="{{ url_for('contact', username=username) }}">Contact</a>
+</p>
+
     </div>
 </header>
 
@@ -32,9 +30,27 @@
 
 
     <!-- Main page content -->
-    <main>
-        <h2>Welcome to the main page</h2>
-    </main>
+<main>
+    <section class="users">
+        <h2>Welcome to My Digital Portfolio!</h2>
+        <p>This website was created as a way to further our understanding and proficiency in coding while also providing a platform 
+           to showcase our education, experiences, and projects - both professional and personal.        
+        </p>
+
+        <main class="user-select">
+    <h2>Select whose profile you'd like to view</h2>
+
+    <div class="buttons">
+        {% for username, user in users.items() %}
+            <a href="{{ url_for('overview', username=username) }}" class="btn">
+                {{ user.name }}
+            </a>
+        {% endfor %}
+    </div>
+</main>
+
+    </section>
+</main>
 
 </body>
 </html>
