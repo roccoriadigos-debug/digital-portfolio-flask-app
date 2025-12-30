@@ -17,10 +17,7 @@
         <h1>My Digital Portfolio</h1>
 
         <p class="banner-links">
-    <a href="{{ url_for('overview', username=username) }}">Overview</a> •
-    <a href="{{ url_for('projects', username=username) }}">Projects</a> •
-    <a href="{{ url_for('education', username=username) }}">Education</a> •
-    <a href="{{ url_for('contact', username=username) }}">Contact</a>
+    <a href="{{ url_for('newuser') }}">New User</a>
 </p>
 
     </div>
@@ -42,7 +39,7 @@
 
     <div class="buttons">
         {% for username, user in users.items() %}
-            <a href="{{ url_for('overview', username=username) }}" class="btn">
+            • <a href="{{ url_for('overview', username=username) }}" class="btn">
                 {{ user.name }}
             </a>
         {% endfor %}

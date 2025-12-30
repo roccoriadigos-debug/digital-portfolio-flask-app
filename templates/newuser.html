@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Digital Portfolio</title>
+
+    <!-- Link CSS using url_for -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+
+    
+    <!-- Banner / Header -->
+<header class="banner">
+    <div class="banner-text">
+        <h1>My Digital Portfolio</h1>
+
+        <p class="banner-links">
+    <a href="{{ url_for('home') }}">Home</a> •
+</p>
+
+    </div>
+</header>
+
+
+
+ <!-- Main page content -->
+<main>
+    <section class="subheading">
+        <h1>To create your digital portfolio, please begin inputting the following personnal information.</h1>
+        <h2>Overview</h2>
+</main>

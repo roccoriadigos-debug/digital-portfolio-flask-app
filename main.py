@@ -80,7 +80,9 @@ def contact(username):
 
 
 
-
+@app.route("/New_User")
+def newuser():
+    return render_template("newuser.html")
 
 
 if __name__ == "__main__":

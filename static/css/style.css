@@ -30,6 +30,7 @@ body {
     color: #e5e7eb;
     text-decoration: none;
     font-weight: 500;
+    align-self: right;
 }
 
 .banner-links a:hover {
@@ -62,3 +63,38 @@ body {
     font-size: x-large;
 }
 
+
+/* Buttons */
+
+.buttons {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    padding-left: 50px;
+    font-size: x-large;
+}
+
+
+
+/* Subheading */
+
+.subheading {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.subheading h1 {
+    align-self: center;
+    font-size: xx-large;
+    color: #000000;
+}
+
+.subheading h2 {
+    text-align: left;
+    padding-left: 50px;
+    font-size: x-large;
+}
+
+.subheading b1 {
+    text-align: left;
+    padding-left: 50px;
+    font-size: larger;
+}
