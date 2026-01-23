@@ -6,35 +6,31 @@ body {
 
 /* Banner layout */
 .banner {
-    align-items: center;      /* vertically center text */
-    gap: 10px;
-    padding: 10px;
-    background-color: rgb(49, 5, 49);
+    font-family: 'Times New Roman', Times, serif;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;        /* same y-axis */
+    justify-content: space-between; /* left & far right */
+    padding: 20px 40px;
+    background-color: #5c0a4e;
+}
+
+.banner-title {
+    justify-self: center;
+    font-size: xx-large;
+    color: #fcf9f9;
+}
+
+.banner-link {
+    justify-self: right;
+    padding: 10px 16px;
+    border-radius: 6px;
+    background-color: #9c9a9a;
     color: white;
 }
 
-.banner-text {
-    text-align: center;        /* text centered */
-}
-
-.banner-text h1 {
-    font-size: 750;
-    margin: 0;
-}
-
-.banner-links {
-    margin-top: 10px;
-}
-
-.banner-links a {
-    color: #e5e7eb;
-    text-decoration: none;
-    font-weight: 500;
-    align-self: right;
-}
-
-.banner-links a:hover {
-    text-decoration: underline;
+.banner-link:hover {
+    background-color: #555;
 }
 
 
