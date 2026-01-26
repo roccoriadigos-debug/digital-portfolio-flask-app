@@ -13,9 +13,9 @@
     
     <!-- Banner / Header -->
 <header class="banner">
-    <div class="banner-spacer"></div>
+    <div class="banner-spacer"></div> 
     <h1 class="banner-title">My Digital Portfolio</h1>
-    <a class="banner-link" href="{{ url_for('newuser') }}">Manage User Accounts</a>
+    <a class="banner-link" href="{{ url_for('manage_user_accounts') }}">Manage User Accounts</a>
 </header>
 
 
@@ -24,24 +24,23 @@
 <main>
     <section class="users">
         <h2>Welcome to My Digital Portfolio!</h2>
-        <p>This website was created as a way to further our understanding and proficiency in coding while also providing a platform 
-           to showcase our education, experiences, and projects - both professional and personal.        
+        <p>
+            This website was created as a way to further our understanding and proficiency in coding while also providing a platform 
+            to showcase our education, experiences, and projects - both professional and personal.
         </p>
+    </section>
 
-        <main class="user-select">
-    <h2>Select whose profile you'd like to view</h2>
+    <section class="users">
+        <h2>Select whose profile you'd like to view:</h2>
 
-    <div class="buttons">
-        {% for username, user in users.items() %}
-            • <a href="{{ url_for('overview', username=username) }}" class="btn">
-                {{ user.name }}
-            </a>
-        {% endfor %}
-    </div>
-</main>
-
+        <div class="buttons">
+            {% for username, user in users.items() %}
+                • <a href="{{ url_for('overview', username=username) }}" class="btn">
+                    {{ user.first_name }} {{ user.last_name }}
+                </a><br>
+            {% endfor %}
+        </div>
     </section>
 </main>
-
 </body>
 </html>
