@@ -23,17 +23,18 @@
  <!-- Main page content -->
 
 <main>
-    <section class="users">
-        <h2>Welcome to My Digital Portfolio! Please select one of the following options to continue.</h2>
-    </section>
 
-    <div class="buttons">
-    • <a href="{{ url_for('new_user') }}">Create a New User Account</a>
-    <br><br>
-    • <a href="{{ url_for('modify_user') }}">Modify a User's Account</a>
-    <br><br>
-    • <a href="{{ url_for('delete_user') }}">Delete a User's Account</a>
-</div>
+    <section>
+        <h2 class="subheading">Please select one of the following options to continue.</h2>
+
+        <div class="buttons">
+        • <a href="{{ url_for('new_user') }}">Create a New User Account</a>
+        <br><br>
+        • <a href="{{ url_for('modify_user') }}">Modify a User's Account</a>
+        <br><br>
+        • <a href="{{ url_for('delete_user') }}">Delete a User's Account</a>
+        </div>
+    </section>
 
 </main>
 

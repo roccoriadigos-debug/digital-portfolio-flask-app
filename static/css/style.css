@@ -1,10 +1,29 @@
-body {
-    font-family: 'Times New Roman', Times, serif;
-    background-color: #ffffff;
-    margin: 0;
+/* =========================
+   1. Global / Base Styles
+   ========================= */
+
+
+* {
+    box-sizing: border-box;
 }
 
-/* Banner layout */
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #ffffff;
+    color: #000;
+}
+
+
+
+
+
+/* =========================
+   2. Layout
+   ========================= */
+
+
+/* Banner / Header */
 .banner {
     font-family: 'Times New Roman', Times, serif;
     display: grid;
@@ -33,67 +52,74 @@ body {
     background-color: #555;
 }
 
-.banner-subheaders {
-    font-size: larger;
-}
 
-/* Users */
 
-.users {
+
+
+/* =========================
+   3. Typography
+   ========================= */
+
+
+h1, h2, h3 {
     font-family: 'Times New Roman', Times, serif;
+    margin: 0;
 }
 
-.users h2 {
+
+/* Page section headings */
+.subheading {
+    margin-top: 30px;
+    margin-bottom: 10px;
     padding-left: 50px;
-    padding-bottom: 0;
-    font-size: xx-large;
+    font-size: 1.8rem;
 }
 
-.users p {
-    padding-top: 0;
+
+/* Paragraph text */
+.text {
     padding-left: 50px;
     padding-right: 50px;
-    align-items: left;
-    color: #000000;
-    font-size: xx-large;
-}
-
-.users p1 {
-    font-size: x-large;
+    font-size: 1.2rem;
+    line-height: 1.6;
 }
 
 
-/* Buttons */
 
+
+
+/* =========================
+   4. Components
+   ========================= */
+
+
+/* Button / link list container */
 .buttons {
-    font-family: 'Times New Roman', Times, serif;
-    text-align: left;
     padding-left: 50px;
-    font-size: x-large;
-}
-
-
-
-/* Subheading */
-
-.subheading {
+    font-size: 1.2rem;
     font-family: 'Times New Roman', Times, serif;
 }
 
-.subheading h1 {
-    align-self: center;
-    font-size: xx-large;
-    color: #000000;
+.buttons a {
+    display: inline-block;
+    margin: 6px 0;
+    text-decoration: none;
+    color: #5c0a4e;
 }
 
-.subheading h2 {
-    text-align: left;
-    padding-left: 50px;
-    font-size: x-large;
+.buttons a:hover {
+    text-decoration: underline;
 }
 
-.subheading b1 {
-    text-align: left;
-    padding-left: 50px;
-    font-size: larger;
+
+
+
+
+/* =========================
+   5. Page Sections
+   ========================= */
+
+   
+.users {
+    font-family: 'Times New Roman', Times, serif;
 }

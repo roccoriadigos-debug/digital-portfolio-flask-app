@@ -7,6 +7,9 @@
     <!-- Link CSS using url_for -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
+
+
 <body>
 
 
@@ -22,25 +25,29 @@
 
     <!-- Main page content -->
 <main>
-    <section class="users">
-        <h2>Welcome to My Digital Portfolio!</h2>
-        <p>
-            This website was created as a way to further our understanding and proficiency in coding while also providing a platform 
-            to showcase our education, experiences, and projects - both professional and personal.
-        </p>
+
+    <section>
+        <h2 class="subheading">Welcome to My Digital Portfolio!</h2>
+            <p class="text">
+                This website was created as a way to further our understanding and proficiency in coding while also providing a platform 
+                to showcase our education, experiences, and projects - both professional and personal.
+            </p>
     </section>
 
-    <section class="users">
-        <h2>Select whose profile you'd like to view:</h2>
 
-        <div class="buttons">
-            {% for username, user in users.items() %}
-                • <a href="{{ url_for('overview', username=username) }}" class="btn">
-                    {{ user.first_name }} {{ user.last_name }}
-                </a><br>
-            {% endfor %}
-        </div>
+    <section>
+        <h2 class="subheading">Select whose profile you'd like to view:</h2>
+
+            <div class="buttons">
+                {% for username, user in users.items() %}
+                    • <a href="{{ url_for('overview', username=username) }}" class="btn">
+                        {{ user.first_name }} {{ user.last_name }}
+                    </a><br>
+                {% endfor %}
+            </div>
     </section>
+
+
 </main>
 </body>
 </html>
