@@ -64,6 +64,27 @@ body {
     color: #fcf9f9;
 }
 
+.two-column-page .content-grid { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    padding: 40px;
+}
+
+.two-column-page .left-side {
+    padding: 0px;
+}
+
+.two-column-page .right-side {
+    background-color: #fcf9f9;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: auto;
+}
+
 /* =========================
    3. Buttons / Links
 ========================= */
@@ -259,6 +280,14 @@ h1, h2, h3 {
 ========================= */
 @media (max-width: 900px) {
     .new-user-page .content-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+} 
+
+@media (max-width: 900px) {
+    .two-column-page .content-grid {
         grid-template-columns: 1fr;
         gap: 20px;
         padding: 20px;
