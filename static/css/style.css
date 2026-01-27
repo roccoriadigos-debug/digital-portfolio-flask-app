@@ -89,6 +89,7 @@ body {
 .form-header h2 {
     margin: 0;
     font-size: 1.8rem;
+    justify-self: center;
 }
 
 .form-body {
@@ -162,6 +163,15 @@ h1, h2, h3 {
 
 
 /* Button / link list container */
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #5c0a4e;
+}
+
 .buttons {
     padding-top: 5px;
     padding-left: 50px;
@@ -223,6 +233,29 @@ h1, h2, h3 {
 
 .form-actions button:hover {
     background-color: #7a1266;
+}
+
+.upload-box {
+    border: 2px dashed #666;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.upload-box.drag-over {
+    background-color: #2a2a2a;
+    border-color: #9b4d96;
+}
+
+.upload-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 14px;
+    background-color: #5c0a4e;
+    color: #fff;
+    border-radius: 6px;
 }
 
 
