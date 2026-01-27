@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Digital Portfolio</title>
+
+    <!-- Link CSS using url_for -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- Banner / Header -->
+<header class="banner">
+    <h1 class="banner-title">My Digital Portfolio</h1>
+    <a class="banner-button" href="{{ url_for('main_bp.home') }}">Return to Homepage</a>
+</header>
+
+<!-- Main page content -->
+<main>
+    <section>
+        <h2 class="subheading">Please select one of the following options to continue.</h2>
+
+        <div class="buttons">
+            • <a href="{{ url_for('user_bp.new_user') }}">Create a New User Account</a>
+            <br><br>
+            • <a href="{{ url_for('user_bp.modify_user') }}">Modify a User's Account</a>
+            <br><br>
+            • <a href="{{ url_for('user_bp.delete_user') }}">Delete a User's Account</a>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>

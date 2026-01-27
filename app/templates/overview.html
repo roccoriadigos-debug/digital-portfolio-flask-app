@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ user.first_name }} {{ user.last_name }} - Overview</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- Banner / Header -->
+<header class="banner">
+    <h1 class="banner-title">My Digital Portfolio</h1>
+    <a class="banner-button" href="{{ url_for('main_bp.home') }}">Return to Homepage</a>
+
+    <p class="banner-links">
+        <a href="{{ url_for('main_bp.overview', user_id=user_id, username=username) }}">Overview</a> •
+        <a href="{{ url_for('main_bp.projects', user_id=user_id, username=username) }}">Projects</a> •
+        <a href="{{ url_for('main_bp.education', user_id=user_id, username=username) }}">Education</a> •
+        <a href="{{ url_for('main_bp.contact', user_id=user_id, username=username) }}">Contact</a>
+    </p>
+</header>
+
+<!-- Main Content -->
+<main class="page-container">
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        {% if user.profile_image %}
+            <img src="{{ url_for('user_bp.uploaded_file', filename=user.profile_image) }}"
+                 alt="{{ user.first_name }} {{ user.last_name }}'s profile picture"
+                 class="profile-pic">
+        {% else %}
+            <p class="text">No Picture Uploaded</p>
+        {% endif %}
+
+        <h2>{{ user.first_name }} {{ user.middle_initial }} {{ user.last_name }}</h2>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        {% if user.phone_number %}<p><strong>Phone:</strong> {{ user.phone_number }}</p>{% endif %}
+        {% if user.city or user.state %}<p><strong>Location:</strong> {{ user.city }}, {{ user.state }}</p>{% endif %}
+        {% if user.bio %}<p><strong>Bio:</strong> {{ user.bio }}</p>{% endif %}
+    </section>
+
+</main>
+
+</body>
+</html>

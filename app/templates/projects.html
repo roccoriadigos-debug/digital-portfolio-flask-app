@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ user.first_name }} {{ user.last_name }} - Overview</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- Banner / Header -->
+<header class="banner">
+    <h1 class="banner-title">My Digital Portfolio</h1>
+    <a class="banner-button" href="{{ url_for('main_bp.home') }}">Return to Homepage</a>
+
+    <p class="banner-links">
+        <a href="{{ url_for('main_bp.overview', user_id=user_id, username=username) }}">Overview</a> •
+        <a href="{{ url_for('main_bp.projects', user_id=user_id, username=username) }}">Projects</a> •
+        <a href="{{ url_for('main_bp.education', user_id=user_id, username=username) }}">Education</a> •
+        <a href="{{ url_for('main_bp.contact', user_id=user_id, username=username) }}">Contact</a>
+    </p>
+</header>
+
+<!-- Main Content -->
