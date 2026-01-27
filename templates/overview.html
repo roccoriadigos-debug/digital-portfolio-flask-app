@@ -7,23 +7,24 @@
     <!-- Link CSS using url_for -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
+
+
 <body>
 
 
     
     <!-- Banner / Header -->
 <header class="banner">
-    <div class="banner-text">
-        <h1>My Digital Portfolio</h1>
+    <h1 class="banner-title">My Digital Portfolio</h1>
+    <a class="banner-button" href="{{ url_for('home') }}">Return to Homepage</a>
 
-        <p class="banner-links">
-    <a href="{{ url_for('overview', username=username) }}">Overview</a> •
-    <a href="{{ url_for('projects', username=username) }}">Projects</a> •
-    <a href="{{ url_for('education', username=username) }}">Education</a> •
-    <a href="{{ url_for('contact', username=username) }}">Contact</a>
-</p>
-
-    </div>
+    <p class="banner-links">
+        <a href="{{ url_for('overview', user_id=user_id, username=username) }}">Overview</a> •
+        <a href="{{ url_for('projects', user_id=user_id, username=username) }}">Projects</a> •
+        <a href="{{ url_for('education', user_id=user_id, username=username) }}">Education</a> •
+        <a href="{{ url_for('contact', user_id=user_id, username=username) }}">Contact</a>
+    </p>
 </header>
 
 

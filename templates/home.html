@@ -16,9 +16,8 @@
     
     <!-- Banner / Header -->
 <header class="banner">
-    <div class="banner-spacer"></div> 
     <h1 class="banner-title">My Digital Portfolio</h1>
-    <a class="banner-link" href="{{ url_for('manage_user_accounts') }}">Manage User Accounts</a>
+    <a class="banner-button" href="{{ url_for('manage_user_accounts') }}">Manage User Accounts</a>
 </header>
 
 
@@ -29,18 +28,19 @@
     <section>
         <h2 class="subheading">Welcome to My Digital Portfolio!</h2>
             <p class="text">
-                This website was created as a way to further our understanding and proficiency in coding while also providing a platform 
-                to showcase our education, experiences, and projects - both professional and personal.
+                This website was created as a way to further our understanding and proficiency in coding, while also providing a platform 
+                to showcase our resumes. This includes contact information, education, experiences, and any projects completed or currently in-progress - both professionally and personally.
             </p>
     </section>
 
 
     <section>
-        <h2 class="subheading">Select whose profile you'd like to view:</h2>
+        <h2 class="subheading">Select the user you'd like to view:</h2>
 
             <div class="buttons">
-                {% for username, user in users.items() %}
-                    • <a href="{{ url_for('overview', username=username) }}" class="btn">
+                {% for user_id, user in users.items() %}
+                    {% set username = user.first_name ~ "_" ~ user.last_name %}
+                    • <a href="{{ url_for('overview', user_id=user_id, username=username) }}" class="btn">
                         {{ user.first_name }} {{ user.last_name }}
                     </a><br>
                 {% endfor %}

@@ -1,27 +1,26 @@
 {
-  "Rocco": {
+  "4a8ca5": {
     "first_name": "Rocco",
     "middle_initial": "A",
     "last_name": "Riadigos",
-    "bio": "Full-stack developer and project lead.",
-    "projects": [
-      "Flask Web App",
-      "Team Management Tool"
-    ],
-    "education": [
-      "B.S. in Computer Science"
-    ]
+    "email": "roccoriadigos@gmail.com",
+    "phone_number": "3055620594",
+    "city": "Miami",
+    "state": "Florida",
+    "bio": "Something something ",
+    "projects": [],
+    "education": []
   },
-  "Desiree": {
+  "0bf631": {
     "first_name": "Desiree",
     "middle_initial": "D",
     "last_name": "Martinez",
-    "bio": "Software Engineer with experience in application design",
-    "projects": [
-      "Flask Web App"
-    ],
-    "education": [
-      "B.S. in Computer Science"
-    ]
+    "email": "dmart@gmail.com",
+    "phone_number": "",
+    "city": "",
+    "state": "",
+    "bio": "",
+    "projects": [],
+    "education": []
   }
 }

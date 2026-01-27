@@ -1,6 +1,7 @@
 ## Imports 
 import json
-from flask import Flask, render_template, abort
+import uuid
+from flask import Flask, render_template, abort, request, redirect, url_for
 
 
 
@@ -17,12 +18,13 @@ def load_users():
 USERS = load_users()
 
 
-## Obtain User's Data when selected
-def get_user(username):
-    for key in USERS:
-        if key.lower() == username.lower():
-            return USERS[key]
-    abort(404)
+## Obtain a User's Data by ID
+def get_user_by_id(user_id):
+    user = USERS.get(user_id)
+    if not user:
+        abort(404)
+    return user
+
 
 
 
@@ -35,47 +37,31 @@ def home():
 
 
 
-@app.route("/<username>/Overview")
-def overview(username):
-    user = get_user(username)
-    return render_template(
-        "overview.html",
-        user=user,
-        username=user["first_name"]
-    )
+@app.route("/<user_id>/<username>/Overview")
+def overview(user_id, username):
+    user = get_user_by_id(user_id)
+    return render_template("overview.html", user=user, user_id=user_id, username=username)
 
 
 
-@app.route("/<username>/Projects")
-def projects(username):
-    user = get_user(username)
-    return render_template(
-        "projects.html",
-        user=user,
-        username=user["first_name"]
-    )
+@app.route("/<user_id>/<username>/Projects")
+def projects(user_id, username):
+    user = get_user_by_id(user_id)
+    return render_template("projects.html", user=user, user_id=user_id, username=username)
 
 
 
-@app.route("/<username>/Education")
-def education(username):
-    user = get_user(username)
-    return render_template(
-        "education.html",
-        user=user,
-        username=user["first_name"]
-    )
+@app.route("/<user_id>/<username>/Education")
+def education(user_id, username):
+    user = get_user_by_id(user_id)
+    return render_template("education.html", user=user, user_id=user_id, username=username)
 
 
 
-@app.route("/<username>/Contact")
-def contact(username):
-    user = get_user(username)
-    return render_template(
-        "contact.html",
-        user=user,
-        username=user["first_name"]
-    )
+@app.route("/<user_id>/<username>/Contact")
+def contact(user_id, username):
+    user = get_user_by_id(user_id)
+    return render_template("contact.html", user=user, user_id=user_id, username=username)
 
 
 
@@ -86,8 +72,37 @@ def contact(username):
 def manage_user_accounts():
     return render_template("manageuseraccounts.html")
 
-@app.route("/New_User")
+@app.route("/New_User", methods=["GET", "POST"])
 def new_user():
+    if request.method == "POST":
+        user_id = str(uuid.uuid4().hex[:6]) # Create a 6-bit unique ID
+
+        # Create user data
+        new_user_data = {
+            "first_name": request.form["first_name"],
+            "middle_initial": request.form["middle_initial"],
+            "last_name": request.form["last_name"],
+            "email": request.form["email"],
+            "phone_number": request.form["phone_number"],
+            "city": request.form["city"],
+            "state": request.form["state"],
+            "bio": request.form["bio"],
+            "projects": [],
+            "education": []
+        }
+
+        # Add to USERS dict
+        USERS[user_id] = new_user_data
+
+        # Save to JSON
+        with open("data/users.json", "w") as f:
+            json.dump(USERS, f, indent=2)
+
+
+        # Open their Overview Page
+        username = f"{new_user_data['first_name']}_{new_user_data['last_name']}"
+        return redirect(url_for("overview", user_id=user_id, username=username))
+
     return render_template("newuser.html")
 
 @app.route("/Modify_User")
