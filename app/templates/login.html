@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Digital Portfolio</title>
+
+    <!-- Link CSS using url_for -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Main page content -->
+<main class="two-column-page">
+    <div class="content-grid">
+
+        <!-- Left Column -->
+        <div class="left-side">
+
+        
+        <!-- Welcome Banner -->
+            <div class="column-banner">
+                <h3>Welcome to My Digital Portfolio</h3>
+            </div>
+
+            <!-- Login/Sign up Form -->
+            <div class="form-body">
+
+                <!-- The Header text of our Login Form -->
+                <div class="form-header">Login to access your portfolio</div>
+
+                <!-- The Form input Fields-->
+                <form method="POST" action="{{ url_for('user_bp.new_user') }}" enctype="multipart/form-data">
+
+                    <div class="form-fields">
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input type="email" name="email" placeholder="yourname@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Password:</label>
+                            <input type="password" name="password" placeholder="Enter password" required>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit">Login</button>
+                        </div>
+                    </div>
+
+                    <div class="form-subheading">
+                        Need an account? 
+                        <a href="{{ url_for('user_bp.new_user') }}">Create my digital portfolio</a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- Right Column: Background Image -->
+        <div class="right-side">
+            <img src="{{ url_for('static', filename='images/purple-background-image.png') }}"
+                 alt="Login Page background"
+                 class="background-image">
+        </div>
+
+    </div>
+</main>
+</body>
+</html>

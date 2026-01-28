@@ -11,7 +11,7 @@ main_bp = Blueprint('main_bp', __name__)
 @main_bp.route("/")
 def home():
     users = User.query.all()
-    return render_template("home.html", users=users)
+    return render_template("login.html", users=users)
 
 @main_bp.route("/<user_id>/<username>/Overview")
 def overview(user_id, username):
