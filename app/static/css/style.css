@@ -138,8 +138,13 @@ body {
 
 .left-side .form-subheading a {
     color: #2b5dff;
+    text-decoration: none;
+}
+
+.left-side .form-subheading a:hover {
     text-decoration: underline;
 }
+
 /* ===== Right Column ===== */
 .two-column-page .right-side {
     flex: 2;
@@ -155,6 +160,160 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
+/* Account Creation Page */
+/* Full-screen account creation page */
+.account-creation-page {
+    position: relative;
+    width: 100%;
+    height: 100vh;  /* fill viewport */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Background image layer */
+.account-creation-page .background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.account-creation-page .background-layer .background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Form layer */
+.account-creation-page .form-layer {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Banner above form */
+.account-creation-page .column-banner {
+    background-color: rgba(132, 57, 134, 0.85);
+    color: #fff;
+    text-align: center;
+    padding: 12px 20px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    font-weight: 600;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+/* Holographic form body */
+.account-creation-page .form-body {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.account-creation-page .form-body:hover {
+    box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+    transform: translateY(-2px);
+}
+
+/* Form groups */
+.account-creation-page .form-group {
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.account-creation-page .form-group label {
+    color: #ffffff;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.account-creation-page .form-group label input {
+    color: #000;
+}
+
+.account-creation-page .form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 1rem;
+    transition: border 0.2s, background 0.2s;
+}
+
+.account-creation-page .form-group input:focus {
+    outline: none;
+    border-color: #9b59b6;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* Submit button */
+.account-creation-page .form-group button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #843986, #b85fcf);
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.account-creation-page .form-group button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Subheading link */
+.account-creation-page .form-subheading {
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.account-creation-page .form-subheading .link {
+    color: #b85fcf;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.account-creation-page .form-subheading .link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+    .account-creation-page .form-layer {
+        padding: 10px;
+        max-width: 90%;
+    }
+
+    .account-creation-page .form-body {
+        padding: 30px;
+    }
+}
+
+
 
 /* =========================
          Buttons
